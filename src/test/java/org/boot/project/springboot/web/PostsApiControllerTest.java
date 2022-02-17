@@ -60,4 +60,12 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
     }
+
+    @Test
+    public void update_posts() throws Exception {
+        // given
+//        Posts savedPosts = postsRepository.save(Posts.builder()
+//                .title("title")
+//                .content)
+    }
 }
