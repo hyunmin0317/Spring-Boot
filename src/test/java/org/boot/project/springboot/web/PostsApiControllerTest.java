@@ -3,6 +3,7 @@ package org.boot.project.springboot.web;
 import org.boot.project.springboot.domain.posts.Posts;
 import org.boot.project.springboot.domain.posts.PostsRepository;
 import org.boot.project.springboot.web.dto.PostsSaveRequestDto;
+import org.boot.project.springboot.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,6 +32,8 @@ public class PostsApiControllerTest {
 
     @Autowired
     private PostsRepository postsRepository;
+
+
 
     @After
     public void tearDown() throws Exception {
@@ -64,8 +68,25 @@ public class PostsApiControllerTest {
     @Test
     public void update_posts() throws Exception {
         // given
-//        Posts savedPosts = postsRepository.save(Posts.builder()
-//                .title("title")
-//                .content)
+        Posts savedPosts = postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        Long updateId = savedPosts.getId();
+        String expectedTitle = "title2";
+        String expectedContent = "content2";
+
+        PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
+                .title(expectedTitle)
+                .content(expectedContent)
+                .build();
+
+        String url = "http://localhost:"+port+"/api/v1/posts/"+updateId;
+        HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
+
+        //when
+
     }
 }
