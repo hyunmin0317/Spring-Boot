@@ -12,20 +12,22 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-@RunWith(SpringRunner.class)
-@WebMvcTest(controllers = HelloController.class)
+
+// 스프링 부트 테스트와 JUnit 사이의 연결자 역할
+@RunWith(SpringRunner.class)                        // 스프링 실행자 SpringRunner 사용
+@WebMvcTest(controllers = HelloController.class)    // Web(Spring MVC)에 집중할 수 있는 어노테이션
 public class HelloControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+    @Autowired              // Bean 을 주입 받음
+    private MockMvc mvc;    // 웹 API 테스트할 때 사용
 
     @Test
     public void hello_test() throws Exception {
         String hello = "hello";
 
-        mvc.perform(get("/hello"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(hello));
+        mvc.perform(get("/hello"))           // HTTP GET 요청
+                .andExpect(status().isOk())            // 상태 검증 (OK - 200)
+                .andExpect(content().string(hello));   // 결과 검증
     }
 
     @Test
