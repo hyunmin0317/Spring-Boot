@@ -19,17 +19,18 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After
+    @After  // Junit 에서 단위 테스트가 끝날 때마다 수행되는 메소드 지정
     public void cleanup() {
         postsRepository.deleteAll();
     }
 
-    @Test
+    @Test   
     public void save_load() {
         // given
         String title = "테스트 게시글";
         String content = "테스트 본문";
 
+        // 테이블 posts에 insert/update 쿼리 실행
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
@@ -37,6 +38,7 @@ public class PostsRepositoryTest {
                 .build());
 
         // when
+        // 테이블 posts에 있는 모든 데이터를 조회해오는 메소드
         List<Posts> postsList = postsRepository.findAll();
 
         //then
