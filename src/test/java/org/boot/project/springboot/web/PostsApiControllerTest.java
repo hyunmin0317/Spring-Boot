@@ -21,22 +21,20 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringRunner.class)        // 스프링 실행자 SpringRunner 사용
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)     // 스프링 부트 기능 Test 어노테이션
 public class PostsApiControllerTest {
 
     @LocalServerPort
     private int port;
 
-    @Autowired
-    private TestRestTemplate restTemplate;
+    @Autowired      // Bean 을 주입 받음
+    private TestRestTemplate restTemplate;  // JPA 기능까지 한번에 테스트할 때 사용
 
-    @Autowired
+    @Autowired      // Bean 을 주입 받음
     private PostsRepository postsRepository;
 
-
-
-    @After
+    @After          // Junit 에서 단위 테스트가 끝날 때마다 수행되는 메소드 지정
     public void tearDown() throws Exception {
         postsRepository.deleteAll();
     }

@@ -16,7 +16,7 @@ public class Posts extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)     // PK의 생성 규칙
     private Long id;
 
-    // 칼럼에 추가로 변경이 필요하 옵션이 있을 때 사용
+    // 칼럼에 추가로 변경이 필요한 옵션이 있을 때 사용
     @Column(length = 500, nullable = false)
     private String title;
 

@@ -7,9 +7,9 @@ import org.boot.project.springboot.web.dto.PostsSaveRequestDto;
 import org.boot.project.springboot.web.dto.PostsUpdateRequestDto;
 import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor    // 모든 final 필드가 포함된 생성자 생성
 @RestController
-public class PostApiController {
+public class PostsApiController {
 
     private final PostsService postsService;
 
