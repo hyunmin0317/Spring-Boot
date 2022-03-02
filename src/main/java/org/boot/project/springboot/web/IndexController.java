@@ -1,6 +1,7 @@
 package org.boot.project.springboot.web;
 
 import lombok.RequiredArgsConstructor;
+import org.boot.project.springboot.config.auth.LoginUser;
 import org.boot.project.springboot.config.auth.dto.SessionUser;
 import org.boot.project.springboot.service.posts.PostsService;
 import org.boot.project.springboot.web.dto.PostsResponseDto;
@@ -18,11 +19,10 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
 
+    // @LoginUser 를 사용하여 세션 정보를 갖고 옴
     @GetMapping("/")
-    public String index(Model model) {  // 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장
+    public String index(Model model, @LoginUser SessionUser user) {  // 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장
         model.addAttribute("posts", postsService.findAllDesc());
-
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if (user != null) {
             model.addAttribute("userName", user.getName());
