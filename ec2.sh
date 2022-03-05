@@ -22,3 +22,12 @@ sudo reboot
 sudo vim /etc/hosts
 127.0.0.1 host이름
 curl host이름
+
+# MySQL 접근 테스트 (MySQL CLI 설치)
+sudo yum install mysql
+
+# RDS 접속
+mysql -u 계정 -p -h Host주소
+
+# RDS 접속 확인 (데이터베이스 확인)
+show databases;
