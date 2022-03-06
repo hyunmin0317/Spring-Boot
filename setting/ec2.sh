@@ -54,14 +54,14 @@ ll
 chmod +x ./gradlew
 
 # 배포 쉘 스크립트 작성
-vim ~/app/step1/Spring-Boot/deploy.sh
+vim ~/app/step1/deploy.sh
 
 # 스크립트 실행 권한 변경
-chmod +x ./deploy.sh
+chmod +x ~/app/step1/deploy.sh
 ll
 
 # 스크립트 실행
-./deploy.sh
+~/app/step1/deploy.sh
 vim nohup.out
 
 # application-oauth.properties 파일 생성
