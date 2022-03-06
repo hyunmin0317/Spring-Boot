@@ -66,3 +66,6 @@ vim nohup.out
 
 # application-oauth.properties 파일 생성
 vim /home/ec2-user/app/application-oauth.properties
+
+# application-real-db.properties 파일 생성
+vim ~/app/application-real-db.properties
