@@ -31,3 +31,38 @@ mysql -u 계정 -p -h Host주소
 
 # RDS 접속 확인 (데이터베이스 확인)
 show databases;
+
+# EC2에 깃 설치
+sudo yum install git
+
+# 깃 설치 상태 확인
+git --version
+
+# 프로젝트를 저장할 디렉토리 생성 후 이동
+mkdir ~/app && mkdir ~/app/step1
+cd ~/app/step1
+
+# git clone 진행
+git clone https://github.com/hyunmin0317/Spring-Boot.git
+cd Spring-Boot
+ll
+
+# 코드 테스트
+./gradlew test
+
+# gradlew 실행 권한 변경
+chmod +x ./gradlew
+
+# 배포 쉘 스크립트 작성
+vim ~/app/step1/Spring-Boot/deploy.sh
+
+# 스크립트 실행 권한 변경
+chmod +x ./deploy.sh
+ll
+
+# 스크립트 실행
+./deploy.sh
+vim nohup.out
+
+# application-oauth.properties 파일 생성
+vim /home/ec2-user/app/application-oauth.properties

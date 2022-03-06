@@ -18,10 +18,11 @@ apply plugin: 'io.spring.dependency-management'
 
 group 'org.boot.project'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
