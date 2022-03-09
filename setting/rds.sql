@@ -18,6 +18,8 @@ CREATE TABLE test (
     content varchar(255) DEFAULT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
-
 insert into test(content) values ('테스트');
 select * from test;
+
+# 사용자 권한 설정
+UPDATE user SET role = 'USER';

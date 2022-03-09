@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="springboot@springboot.cumjtkv4uzll.ap-northeast-2.rds.amazonaws.com" uuid="95492740-5b7e-4d52-b311-481b7a40bf32">
+    <data-source source="LOCAL" name="@springboot.cumjtkv4uzll.ap-northeast-2.rds.amazonaws.com" uuid="191e3e7b-9daa-4333-a97f-d54a0a6f4987">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://springboot.cumjtkv4uzll.ap-northeast-2.rds.amazonaws.com:3306/springboot</jdbc-url>
+      <jdbc-url>jdbc:mariadb://springboot.cumjtkv4uzll.ap-northeast-2.rds.amazonaws.com:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

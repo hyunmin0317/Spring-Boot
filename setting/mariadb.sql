@@ -3,7 +3,7 @@ CREATE TABLE posts (
                        created_date DATETIME,
                        modified_date DATETIME,
                        author VARCHAR(255),
-                       context TEXT NOT NULL,
+                       content TEXT NOT NULL,
                        title VARCHAR(500) NOT NULL,
                        PRIMARY KEY (id)
 ) ENGINE=InnoDB;
