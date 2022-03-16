@@ -1,5 +1,5 @@
 # Spring Boot
-### Spring Boot 스터디 (2022.02.16 ~ )
+### Spring Boot 스터디 (2022.02.16 ~ 2022.03.09)
 
 ---
 
